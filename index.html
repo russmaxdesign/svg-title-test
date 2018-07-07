@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>SVG Test</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="main">
+    <h1>SVG Test</h1>
+    <p><a href="#">Dummy link above</a></p>
+    <p>A simple test to determine if SVG title is announced by screen readers in line-by-line mode.</p>
+
+    <h2>Example 1: SVG inside a link</h2>
+    <div class="example">
+      <a href="#">
+        Documents
+        <span>
+          <svg class="icon" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 16 16">
+            <title>Down arrow</title>
+            <style>.svg1{fill:green;}</style>
+            <polygon class="svg1" points="5,0 5,8 0,8 8,16 16,8 11,8 11,0" />
+          </svg>
+        </span>
+      </a>
+    </div>
+
+<pre><code>&lt;a href="#"&gt;
+  Documents
+  &lt;span&gt;
+    &lt;svg class="icon" version="1.1" viewBox="0 0 16 16"&gt;
+      &lt;title&gt;Down arrow&lt;/title&gt;
+      &lt;style&gt;.svg1{fill:green;}&lt;/style&gt;
+      &lt;polygon class="svg1" points="5,0 5,8 0,8 8,16 16,8 11,8 11,0" /&gt;
+    &lt;/svg&gt;
+  &lt;/span&gt;
+&lt;/a&gt;</code></pre>
+
+    <h2>Example 2: SVG on its own</h2>
+    <div class="example">
+      <span>
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 16 16">
+          <title>Up arrow</title>
+          <style>.svg2{fill:red;}</style>
+          <polygon class="svg2" points="11,16 11,8 16,8 8,0 0,8 5,8 5,16" />
+        </svg>
+      </span>
+    </div>
+<pre><code>&lt;span&gt;
+  &lt;svg class="icon" version="1.1" viewBox="0 0 16 16"&gt;
+    &lt;title&gt;Up arrow&lt;/title&gt;
+    &lt;style&gt;.svg2{fill:red;}&lt;/style&gt;
+    &lt;polygon class="svg2" points="11,16 11,8 16,8 8,0 0,8 5,8 5,16" /&gt;
+  &lt;/svg&gt;
+&lt;/span&gt;</code></pre>
+
+    <h2>Example 3: SVG on its own, with tabindex on parent</h2>
+    <div class="example">
+      <span tabindex="0">
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 16 16">
+          <title>Right arrow</title>
+          <style>.svg3{fill:blue;}</style>
+          <polygon class="svg3" points="0,11 8,11 8,16 16,8 8,0 8,5 0,5" />
+        </svg>
+      </span>
+    </div>
+<pre><code>&lt;span tabindex="0"&gt;
+  &lt;svg class="icon" version="1.1" viewBox="0 0 16 16"&gt;
+    &lt;title&gt;Right arrow&lt;/title&gt;
+    &lt;style&gt;.svg3{fill:blue;}&lt;/style&gt;
+    &lt;polygon class="svg3" points="0,11 8,11 8,16 16,8 8,0 8,5 0,5" /&gt;
+  &lt;/svg&gt;
+&lt;/span&gt;</code></pre>
+
+    <h2>Example 4: SVG on its own, with tabindex and aria-label on parent</h2>
+    <div class="example">
+      <span tabindex="0" aria-label="Left arrow">
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 16 16">
+          <title>Left arrow</title>
+          <style>.svg4{fill:purple;}</style>
+          <polygon class="svg4" points="16,5 8,5 8,0 0,8 8,16 8,11 16,11" />
+        </svg>
+      </span>
+    </div>
+<pre><code>&lt;span tabindex="0" aria-label="Left arrow"&gt;
+  &lt;svg class="icon" version="1.1" viewBox="0 0 16 16"&gt;
+    &lt;title&gt;Left arrow&lt;/title&gt;
+    &lt;style&gt;.svg4{fill:purple;}&lt;/style&gt;
+    &lt;polygon class="svg4" points="16,5 8,5 8,0 0,8 8,16 8,11 16,11" /&gt;
+  &lt;/svg&gt;
+&lt;/span&gt;</code></pre>
+
+    <h2>Example 5: Hidden content outside SVG</h2>
+    <div class="example">
+      <span>
+        <span class="hidden">Expand to open</span>
+        <span aria-hidden="true">
+          <svg class="icon" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 16 16">
+            <title>Expand</title>
+            <style>.svg5{fill:black;}</style>
+            <polygon class="svg5" points="16,5 11,5 11,0 5,0 5,5 0,5 0,11 5,11 5,16 11,16 11,11 16,11" />
+          </svg>
+        </span>
+      </span>
+    </div>
+<pre><code>&lt;span&gt;
+  &lt;span class="hidden"&gt;Expand to open&lt;/span&gt;
+  &lt;span aria-hidden="true"&gt;
+    &lt;svg class="icon" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 16 16"&gt;
+      &lt;title&gt;Expand&lt;/title&gt;
+      &lt;style&gt;.svg5{fill:black;}&lt;/style&gt;
+      &lt;polygon class="svg5" points="16,5 11,5 11,0 5,0 5,5 0,5 0,11 5,11 5,16 11,16 11,11 16,11" /&gt;
+    &lt;/svg&gt;
+  &lt;/span&gt;
+&lt;/span&gt;</code></pre>
+
+    <h2>Results</h2>
+    <h3>Windows/Chrome/NVDA</h3>
+    <div class="results">
+      <p>
+        <b>Example 1:</b><br>
+        <i>"Link. Documents. Graphic. Down arrow"</i> - <span class="pass">PASS</span>
+      </p>
+      <p>
+        <b>Example 2:</b><br>
+        <i>"Graphic. Up arrow"</i> - <span class="pass">PASS</span>
+      </p>
+      <p>
+        <b>Example 3:</b><br>
+        <i>"Graphic. Right arrow"</i> - <span class="pass">PASS</span>
+      </p>
+      <p>
+        <b>Example 4:</b><br>
+        <i>"Graphic. Left arrow"</i> - <span class="pass">PASS</span>
+      </p>
+      <p>
+        <b>Example 5:</b><br>
+        <i>"Expand to open"</i> - <span class="pass">PASS</span>
+      </p>
+    </div>
+
+    <h3>Windows/FireFox/NVDA</h3>
+    <div class="results">
+      <p>
+        <b>Example 1:</b><br>
+        <i>"Link. Documents"</i> - <span class="pass">FAIL</span>
+      </p>
+      <p>
+        <b>Example 2:</b><br>
+        [Not announced] - <span class="fail">FAIL</span>
+      </p>
+      <p>
+        <b>Example 3:</b><br>
+        [Not announced] - <span class="fail">FAIL</span>
+      </p>
+      <p>
+        <b>Example 4:</b><br>
+        <i>"Left arrow"</i> - <span class="pass">PASS</span>
+      </p>
+      <p>
+        <b>Example 5:</b><br>
+        <i>"Expand to open"</i> - <span class="pass">PASS</span>
+      </p>
+    </div>
+
+    <h3>Windows/IE Edge/NVDA</h3>
+    <div class="results">
+      <p>
+        <b>Example 1:</b><br>
+        <i>"Link. Documents. Graphic. Clickable. Down arrow"</i> - <span class="pass">PASS</span>
+      </p>
+      <p>
+        <b>Example 2:</b><br>
+        <i>"Graphic. Up arrow"</i> - <span class="pass">PASS</span>
+      </p>
+      <p>
+        <b>Example 3:</b><br>
+        <i>"Graphic. Right arrow"</i> - <span class="pass">PASS</span>
+      </p>
+      <p>
+        <b>Example 4:</b><br>
+        <i>"Graphic. Left arrow"</i> - <span class="pass">PASS</span>
+      </p>
+      <p>
+        <b>Example 5:</b><br>
+        <i>"Expand to open"</i> - <span class="pass">PASS</span>
+      </p>
+    </div>
+
+    <h3>OSX/Chrome/VoiceOver</h3>
+    <div class="results">
+      <p>
+        <b>Example 1:</b><br>
+        <i>"Internal link. Documents. Down arrow"</i> - <span class="pass">PASS</span>
+      </p>
+      <p>
+        <b>Example 2:</b><br>
+        [Not announced] - <span class="fail">FAIL</span>
+      </p>
+      <p>
+        <b>Example 3:</b><br>
+        [Not announced] - <span class="fail">FAIL</span>
+      </p>
+      <p>
+        <b>Example 4:</b><br>
+        [Not announced in line-by-line mode] - <span class="fail">FAIL</span><br>
+        <i>"Left arrow. Group"</i> [In tab-to-focus mode]
+      </p>
+      <p>
+        <b>Example 5:</b><br>
+        <i>"Expand to open"</i> - <span class="pass">PASS</span>
+      </p>
+    </div>
+
+    <p><a href="#">Dummy link below</a></p>
+  </main>
+</body>
+</html>
